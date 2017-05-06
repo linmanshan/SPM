@@ -2,7 +2,7 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping package="com.buptsse.spm.domain">
-	<class name="Exam" table="Exam">
+	<class name="Exam" table="exam">
 		<cache usage="read-write" /> <!-- 缓存 -->
 		
 		<composite-id>

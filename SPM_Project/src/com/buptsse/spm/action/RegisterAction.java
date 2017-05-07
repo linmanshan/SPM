@@ -3,25 +3,22 @@
  */
 package com.buptsse.spm.action;
 
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import javax.annotation.Resource;
-
+import com.alibaba.fastjson.JSONObject;
+import com.buptsse.spm.domain.Code;
+import com.buptsse.spm.domain.User;
+import com.buptsse.spm.service.ICodeService;
+import com.buptsse.spm.service.IUserService;
+import com.opensymphony.xwork2.ActionSupport;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.struts2.ServletActionContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.alibaba.fastjson.JSONObject;
-import com.buptsse.spm.domain.Code;
-import com.buptsse.spm.domain.Course;
-import com.buptsse.spm.domain.User;
-import com.buptsse.spm.service.ICodeService;
-import com.buptsse.spm.service.IUserService;
-import com.opensymphony.xwork2.ActionSupport;
+import javax.annotation.Resource;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * @author BUPT-TC
@@ -53,9 +50,13 @@ public class RegisterAction extends ActionSupport {
 		if (user == null){
 			LOG.error("USER对象为空！");
 		}
-		if (StringUtils.isBlank(user.getUserName()) || StringUtils.isBlank(user.getPassword())){
-			msg = "用户名或密码未输入,请输入用户名或密码！";
-		}else{
+		if (StringUtils.isBlank(user.getUserName())) {
+			msg = "用户名未输入,请输入用户名！";
+		} else if (StringUtils.isBlank(user.getPassword())) {
+			msg = "密码未输入,请输入密码！";
+		} else if (StringUtils.isBlank(user.getEmail())) {
+			msg = "邮箱未输入,请输入邮箱！";
+		} else {
 			LOG.error("开始保存数据");
 			if(user.getPassword().equals(user.getPassword1())){
 				user.setUserId(user.getUserName());

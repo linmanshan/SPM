@@ -13,6 +13,7 @@ public class User implements Serializable{
 	private String userName;
 	private String password;
 	private String password1;
+	private String email;
 	private String position;
 	private String userId;
 	private int videoTime;
@@ -55,6 +56,14 @@ public class User implements Serializable{
 
 	public void setPassword1(String password1) {
 		this.password1=password1;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public String getPosition() {

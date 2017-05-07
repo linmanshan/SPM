@@ -7,9 +7,9 @@
 
 		<!-- 基本配置：JDBC方式 -->
 		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/hibernate4demo?useUnicode=true&amp;characterEncoding=utf-8</property>
-		<property name="hibernate.connection.username">root</property>
-		<property name="hibernate.connection.password">cj129599</property>
+		<property name="hibernate.connection.url">jdbc:mysql://www.andromedids.cn:3306/spm?useUnicode=true&amp;characterEncoding=utf-8</property>
+		<property name="hibernate.connection.username">remote</property>
+		<property name="hibernate.connection.password">remote-MySQL57</property>
 		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
 
 
@@ -41,9 +41,19 @@
 		
 
 		<!-- 领域对象：映射文件方式 -->
-		<mapping resource="com/hysd/domain/Customer.hbm.xml" />
-		<mapping resource="com/hysd/domain/Order.hbm.xml" />
-		<mapping resource="com/hysd/domain/Emp.hbm.xml" />
+		<mapping resource="com/buptsse/spm/domain/BasicInfo.hbm.xml"/>
+		<mapping resource="com/buptsse/spm/domain/Code.hbm.xml"/>
+		<mapping resource="com/buptsse/spm/domain/ConfigInfo.hbm.xml"/>
+		<mapping resource="com/buptsse/spm/domain/Course.hbm.xml"/>
+		<mapping resource="com/buptsse/spm/domain/DownLoad.hbm.xml"/>
+		<mapping resource="com/buptsse/spm/domain/Exam.hbm.xml"/>
+		<mapping resource="com/buptsse/spm/domain/Message.hbm.xml"/>
+		<mapping resource="com/buptsse/spm/domain/Schedule.hbm.xml"/>
+		<mapping resource="com/buptsse/spm/domain/SpChapter.hbm.xml"/>
+		<mapping resource="com/buptsse/spm/domain/SpChapterVideo.hbm.xml"/>
+		<mapping resource="com/buptsse/spm/domain/TeachingPlan.hbm.xml"/>
+		<mapping resource="com/buptsse/spm/domain/TradeInfo.hbm.xml"/>
+		<mapping resource="com/buptsse/spm/domain/User.hbm.xml"/>
 		<!-- 领域对象：Annotation注解方式
 		<mapping class="实体类全限定名" />
 		 -->

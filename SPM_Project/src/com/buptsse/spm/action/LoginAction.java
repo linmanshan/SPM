@@ -26,6 +26,7 @@ public class LoginAction extends ActionSupport
 {
 	private static Logger LOG = LoggerFactory.getLogger(LoginAction.class);
 	private User user;
+	public static int custom =1;
 	
 	@Resource
 	private IUserService userService;
@@ -35,6 +36,7 @@ public class LoginAction extends ActionSupport
 	 */
 	public String login()
 	{
+		if(custom >0){
 		LOG.error("username:" + user.getUserName());
 		
 		try
@@ -44,6 +46,7 @@ public class LoginAction extends ActionSupport
 			
 			Map session = (Map) ActionContext.getContext().getSession();
 			session.put("user", tempuser);
+			--custom;
 			return SUCCESS;			
 
 			
@@ -51,7 +54,10 @@ public class LoginAction extends ActionSupport
 			e.printStackTrace();
 		}
 		LOG.error("开始保存数据");
+		--custom;
 		return SUCCESS;
+		}
+		return "FALSE";
 	}
 	
 	public String logout()
@@ -61,10 +67,12 @@ public class LoginAction extends ActionSupport
 		{
 			Map session = (Map) ActionContext.getContext().getSession();
 			session.clear();
+			++custom;
 			return "success";			
 		} catch(Exception e){
 			e.printStackTrace();
 		}
+		++custom;
 		return "success";
 	}	
 	

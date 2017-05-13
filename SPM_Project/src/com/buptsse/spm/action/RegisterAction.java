@@ -94,7 +94,7 @@ public class RegisterAction extends ActionSupport {
 		int rows=Integer.parseInt(ServletActionContext.getRequest().getParameter("rows"));
 
 		Map paramMap = new HashMap();
-		paramMap.put("userid", userid);
+		paramMap.put("userId", userid);
 		paramMap.put("userName", userName);
 		paramMap.put("position", position);
 

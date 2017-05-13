@@ -98,7 +98,7 @@ public class RegisterAction extends ActionSupport {
 		paramMap.put("userName", userName);
 		paramMap.put("position", position);
 
-		System.out.println("userid"+ userid);
+		System.out.println("userId"+ userid);
 		System.out.println("userName"+ userName);
 		System.out.println("position"+ position);
 		
